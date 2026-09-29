@@ -373,6 +373,13 @@ section.block { background: linear-gradient(180deg, color-mix(in srgb, var(--c) 
 .nav-links { display: flex; order: 3; width: 100%; padding-bottom: 2px; }
 .float-chip { font-size: .72rem; padding: 6px 10px; }
 }
+.app.wide { grid-column: span 2; }
+.grid-3 { grid-auto-flow: dense; }
+@media (max-width: 560px) { .app.wide { grid-column: auto; } }
+.code-link { margin-top: auto; align-self: flex-start; font: 700 .84rem var(--body); text-decoration: none; color: var(--c); padding: 7px 12px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); transition: background .2s, transform .2s; }
+.code-link:hover { background: color-mix(in srgb, var(--c) 20%, transparent); transform: translateY(-2px); }
+.repo-link { margin: -6px 0 18px; }
+.repo-link a { font: 700 .88rem var(--body); color: var(--marigold); }
 @media (prefers-reduced-motion: reduce) {
 *, *::before, *::after { animation: none !important; transition: none !important; }
 html { scroll-behavior: auto; }
@@ -450,7 +457,7 @@ html { scroll-behavior: auto; }
 <span class="sec-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
 <p class="sec-label" style="--c: var(--muted)">About</p>
 <h2 class="sec-title">I learn by building things that work.</h2>
-<p style="margin-top:18px">I'm a first-year Computer Science student at <strong>J.C. Bose University of Science and Technology, YMCA</strong>, Faridabad. I started with Python and SQL on my own, writing small record-keeping apps and calculators, and moved on to real web backends.</p>
+<p style="margin-top:18px">I'm a first-year Computer Science student at <strong>J.C. Bose University of Science and Technology, YMCA</strong>, Faridabad. I started with Python on my own, writing record-keeping apps, billing tools and small games, and moved on to real web backends.</p>
 <p>For <strong>Smart India Hackathon 2026</strong> I built the Python/FastAPI backend of ShilpSetu, a live app that helps artisans sell their work online. I use AI tools every day to prototype faster, and my long-term goal is a career in <strong>cybersecurity</strong>.</p>
 </div>
 <div class="facts reveal">
@@ -469,7 +476,7 @@ html { scroll-behavior: auto; }
 <p class="sec-label">Projects</p>
 <h2 class="sec-title">What I've built</h2>
 </div>
-<p class="sec-note">One live, deployed app and a set of Python &amp; SQL programs I wrote while teaching myself.</p>
+<p class="sec-note">One live, deployed app and a set of Python programs I wrote while teaching myself.</p>
 </div>
 <article class="card feature reveal">
 <div>
@@ -524,44 +531,85 @@ html { scroll-behavior: auto; }
 </div>
 </div>
 </article>
-<h3 class="subhead">Python &amp; SQL applications <span class="tag">self-taught</span></h3>
-<div class="filters" role="group" aria-label="Filter projects by skill">
+<h3 class="subhead">Python applications <span class="tag">self-taught</span></h3>
+<div class="filters" role="group" aria-label="Filter projects">
 <button type="button" class="filter" data-filter="all" aria-pressed="true" style="--c: var(--fg)">All</button>
-<button type="button" class="filter" data-filter="python" aria-pressed="false" style="--c: var(--marigold)">Python</button>
-<button type="button" class="filter" data-filter="sql" aria-pressed="false" style="--c: var(--teal)">SQL</button>
-<button type="button" class="filter" data-filter="files" aria-pressed="false" style="--c: var(--sky)">File handling</button>
-<button type="button" class="filter" data-filter="ai" aria-pressed="false" style="--c: var(--violet)">AI</button>
+<button type="button" class="filter" data-filter="files" aria-pressed="false" style="--c: var(--marigold)">File handling</button>
+<button type="button" class="filter" data-filter="billing" aria-pressed="false" style="--c: var(--teal)">Billing &amp; GST</button>
+<button type="button" class="filter" data-filter="security" aria-pressed="false" style="--c: var(--violet)">Security</button>
+<button type="button" class="filter" data-filter="games" aria-pressed="false" style="--c: var(--rose)">Games</button>
+<button type="button" class="filter" data-filter="ai" aria-pressed="false" style="--c: var(--sky)">AI</button>
 </div>
+<p class="repo-link"><a href="https://github.com/vickysaini172439-sudo/RESUME/tree/main/python-projects" target="_blank" rel="noopener">All Python code on GitHub ↗</a></p>
 <div class="grid-3">
-<article class="card app reveal" data-tags="python sql" style="--c: var(--marigold)">
+<article class="card app reveal" data-tags="python files" style="--c: var(--marigold)">
 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-<h4>Student Record Management</h4>
-<p>Menu-driven app to add, search, update and delete student records in a SQL database.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+<h4>Student Management System</h4>
+<p>Add, search, update, remove and display student records saved in a binary file.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">pickle</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/student-management/student_management.py" target="_blank" rel="noopener">View code ↗</a>
 </article>
-<article class="card app reveal" data-tags="python sql" style="--c: var(--teal)">
-<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
-<h4>Employee Management</h4>
-<p>Stores and manages employee details in a SQL database.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
-</article>
-<article class="card app reveal" data-tags="python sql" style="--c: var(--coral)">
+<article class="card app reveal" data-tags="python files billing" style="--c: var(--coral)">
 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11a7 7 0 0 1 14 0M4 15h16l-1.5 4h-13z"/></svg></div>
 <h4>Food Ordering System</h4>
-<p>Takes food orders from a menu and stores them in a SQL database.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+<p>Pick a restaurant, order from six menu categories and get a bill. Every order is saved to a file.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">pickle</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/food-ordering-system/food_ordering_system.py" target="_blank" rel="noopener">View code ↗</a>
 </article>
-<article class="card app reveal" data-tags="python" style="--c: var(--sky)">
+<article class="card app reveal wide" data-tags="python billing" style="--c: var(--teal)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+<h4>GST Billing &amp; Inventory System</h4>
+<p>Manage products and stock, sell with GST added, check price details and see a profit report.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">Functions</span><span class="tag">Error handling</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/gst-billing-inventory/gst_billing_inventory.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python files billing" style="--c: var(--sky)">
 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h8"/></svg></div>
-<h4>GST Calculator</h4>
-<p>Calculates the GST amount and final price for a given amount and tax rate.</p>
+<h4>GST Bill Calculator</h4>
+<p>Applies the GST rate for each item category and prints a formatted bill with the grand total.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">pickle</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/gst-bill-calculator/gst_bill_calculator.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python security" style="--c: var(--violet)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M17 6l3 3M14.5 8.5l2 2"/></svg></div>
+<h4>Password Generator</h4>
+<p>Makes strong passwords with upper and lowercase letters, digits and symbols, using the secure secrets module.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">secrets</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/password-generator/password_generator.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python files" style="--c: var(--teal)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+<h4>Daily Activity Tracker</h4>
+<p>Logs what you did in each 30-minute, 1-hour or 2-hour slot and saves the day to a text file.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">datetime</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/activity-tracker/activity_tracker.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python games" style="--c: var(--rose)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"/><path d="M7 11v4M5 13h4M15 12h.01M18 14h.01"/></svg></div>
+<h4>Stone Paper Scissor</h4>
+<p>Play against the computer with a running score.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">random</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/rock-paper-scissors/rock_paper_scissors.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python files" style="--c: var(--sky)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+<h4>Text File Analyzer</h4>
+<p>Counts letters and finds lines starting with a vowel in a story file.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">Text files</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/text-file-analyzer/text_file_analyzer.py" target="_blank" rel="noopener">View code ↗</a>
+</article>
+<article class="card app reveal" data-tags="python" style="--c: var(--marigold)">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+<h4>Employee Management</h4>
+<p>Stores and manages employee records.</p>
 <div class="tags"><span class="tag">Python</span></div>
 </article>
-<article class="card app reveal" data-tags="python files" style="--c: var(--rose)">
+<article class="card app reveal" data-tags="python" style="--c: var(--rose)">
 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 16V8l3 5 3-5v8"/></svg></div>
-<h4>Periodic Table Lookup</h4>
-<p>A Python program for looking up elements of the periodic table.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">File handling</span></div>
+<h4>Periodic Table Explorer</h4>
+<p>Enter an atomic number to see the name, symbol, atomic mass, electronegativity, block and period of any of the 118 elements.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">Lists</span></div>
+<a class="code-link" href="https://github.com/vickysaini172439-sudo/RESUME/blob/main/python-projects/periodic-table/periodic_table.py" target="_blank" rel="noopener">View code ↗</a>
 </article>
 <article class="card app reveal" data-tags="ai" style="--c: var(--violet)">
 <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m17 10 5-3v10l-5-3"/></svg></div>
@@ -605,12 +653,12 @@ html { scroll-behavior: auto; }
 <p class="sec-label">Skills</p>
 <h2 class="sec-title">Tools I work with</h2>
 </div>
-<p class="sec-note">Grouped by what I use them for. Everything here appears in my projects.</p>
+<p class="sec-note">Grouped by what I use them for.</p>
 </div>
 <div class="skills">
 <div class="card skill reveal" style="--c: var(--marigold)">
 <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>Languages</h4>
-<div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+<div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">File handling (pickle)</span></div>
 </div>
 <div class="card skill reveal" style="--c: var(--teal)">
 <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Backend &amp; databases</h4>
