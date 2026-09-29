@@ -14,7 +14,6 @@ Console programs I wrote while teaching myself Python: menu-driven record system
 | [Stone Paper Scissor](rock-paper-scissors/rock_paper_scissors.py) | Play against the computer with a running score | `random`, conditionals |
 | [Daily Activity Tracker](activity-tracker/activity_tracker.py) | Logs what you did in each 30-min / 1-hr / 2-hr slot and saves the day's log | Loops, f-strings, text files, `datetime` |
 | [Periodic Table Explorer](periodic-table/periodic_table.py) | Enter an atomic number to see the name, symbol, atomic mass, electronegativity, block and period of any of the 118 elements | Lists, functions, input validation |
-| [Text File Analyzer](text-file-analyzer/text_file_analyzer.py) | Counts M/T letters and prints lines starting with a vowel from `Story.txt` | Text file handling |
 
 ## How to run
 
