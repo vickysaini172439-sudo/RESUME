@@ -280,6 +280,14 @@ animation: sweep 6s linear infinite;
 .win:first-of-type { border-top: 0; padding-top: 0; }
 .win .ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--rose) 14%, transparent); color: var(--rose); }
 .win .ico svg { width: 20px; height: 20px; }
+.posters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .posters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .posters { grid-template-columns: 1fr; } }
+.poster { --c: var(--teal); display: flex; flex-direction: column; gap: 10px; }
+.poster .thumb { aspect-ratio: 4 / 5; }
+.poster .thumb img { object-position: center; }
+.poster h4 { margin: 0; font-family: var(--display); font-size: 1.12rem; }
+.poster p { color: var(--muted); font-size: .92rem; }
 #udaan .win .ico { background: color-mix(in srgb, var(--c) 14%, transparent); color: var(--c); }
 .win strong { display: block; }
 .win span { color: var(--muted); font-size: .92rem; }
@@ -770,6 +778,27 @@ html { scroll-behavior: auto; }
 <div><strong>Teamwork &amp; leadership</strong><span>Head Boy, House Captain and peer mentor in school; now part of a student team that supports placements</span></div>
 </div>
 </div>
+</div>
+<h3 class="subhead">Posters I designed <span class="tag">Canva</span></h3>
+<div class="posters">
+<article class="card poster reveal">
+<button class="thumb" type="button" data-full="1_20261018_150752_0000.png" data-caption="Diwali greeting poster · designed in Canva for UDAAN"><img src="1_20261018_150752_0000.png" alt="Happy Diwali poster designed for UDAAN, J.C. Bose UST, YMCA" loading="lazy" width="400" height="500"><span>View poster</span></button>
+<h4>Diwali greeting poster</h4>
+<p>Festival greeting for the UDAAN and university pages.</p>
+<a class="code-link" href="https://www.canva.com/d/HBpNn7Jett7kTJL" target="_blank" rel="noopener">View on Canva ↗</a>
+</article>
+<article class="card poster reveal">
+<button class="thumb" type="button" data-full="Premium%20Dussehra%20greeting%20poster_20261018_153405_0000.png" data-caption="Dussehra poster · designed in Canva for UDAAN"><img src="Premium%20Dussehra%20greeting%20poster_20261018_153405_0000.png" alt="Happy Dussehra poster designed for UDAAN, J.C. Bose UST, YMCA" loading="lazy" width="400" height="500"><span>View poster</span></button>
+<h4>Dussehra poster</h4>
+<p>Vijayadashami greeting built around a Ram and Ravana scene.</p>
+<a class="code-link" href="https://www.canva.com/d/p3bE-F3BW51dF-T" target="_blank" rel="noopener">View on Canva ↗</a>
+</article>
+<article class="card poster reveal">
+<button class="thumb" type="button" data-full="1_20261018_201642_0000.png" data-caption="Job Fair poster · designed in Canva for UDAAN"><img src="1_20261018_201642_0000.png" alt="Job Fair poster designed for UDAAN, J.C. Bose UST, YMCA" loading="lazy" width="400" height="500"><span>View poster</span></button>
+<h4>Job Fair poster</h4>
+<p>Event poster with date, time, venue and registration blocks for the 21 October 2026 job fair.</p>
+<a class="code-link" href="https://www.canva.com/d/gjZJNuqKcWOGwdl" target="_blank" rel="noopener">View on Canva ↗</a>
+</article>
 </div>
 </div>
 </section>
